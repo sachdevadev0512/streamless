@@ -1,0 +1,20 @@
+# Dependencies
+node_modules
+client/node_modules
+server/node_modules
+
+# Production build outputs
+client/dist
+dist
+
+# Local SQLite databases & uploads
+server/data/*.db*
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Environment & logs
+.env
+.env.local
+*.log
+.system_generated
+.vercel

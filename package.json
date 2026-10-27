@@ -1,0 +1,21 @@
+{
+  "name": "streamless",
+  "version": "1.0.0",
+  "description": "Streamless — Netflix-Inspired Serverless Media Processing Pipeline",
+  "private": true,
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "vercel-build": "cd client && npm install && npm run build",
+    "test": "cd server && node test/system.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.7",
+    "uuid": "^9.0.0"
+  }
+}
