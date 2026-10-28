@@ -18,3 +18,5 @@ server/uploads/*
 *.log
 .system_generated
 .vercel
+
+.vercel

@@ -812,15 +812,13 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// ── Server Listen (Only when executed directly, not inside Vercel Serverless Function) ──
+// ── Server Listen (Supports both Vercel Services process runner and local development) ──
 
 const PORT = process.env.PORT || 3001;
-if (!isVercel && require.main === module) {
+if (require.main === module || process.env.PORT) {
   app.listen(PORT, () => {
-    console.log(`\n  🚀 Streamless API running at http://localhost:${PORT}`);
-    console.log(`  📦 Storage: SQLite DB initialized at server/data/streamless.db`);
-    console.log(`  ⚡ Scaling: Adaptive Auto-Scaling active (Min: ${scalingEngine.minWorkers}, Max: ${scalingEngine.maxWorkers})\n`);
-    addLog('info', 'system', `Server started on port ${PORT} with SQLite persistence and Adaptive Auto-Scaling`);
+    console.log(`\n  🚀 Streamless API running on port ${PORT}`);
+    addLog('info', 'system', `Server started on port ${PORT}`);
   });
 }
 
